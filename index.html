@@ -43,8 +43,29 @@
         .buy-now-btn:hover { background-color: #d35400; transform: translateY(-2px); }
         .category-section { padding: 60px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
         .category-section h2 { margin-bottom: 10px; color: #1a252f; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .card-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; min-height: 50px; }
-        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.05); width: 310px; text-align: left; opacity: 0; transform: translateY(30px); transition: all 0.5s ease-out; display: flex; flex-direction: column; gap: 12px; }
+        .card-container {
+    display: grid;
+    /* Mobile par 2 columns, badi screen par 4-5 */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 15px;
+    padding: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+        }
+        .card {
+    background: white;
+    padding: 15px; /* Thoda padding kam kar lein mobile ke liye */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    width: 100%; /* Important: ye ab grid ke hisaab se chalega */
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+        }
         .card.show { opacity: 1; transform: translateY(0); }
         .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
         .media-container { width: 100%; height: 220px; overflow: hidden; border-radius: 8px; background-color: #eaeaea; }
